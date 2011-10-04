@@ -3,7 +3,7 @@
     initComponent: function () {
 
         this.backButton = new Ext.Button({
-            text: 'Home',
+            text: 'Back',
             ui: 'back',
             handler: this.backButtonTap,
             scope: this
