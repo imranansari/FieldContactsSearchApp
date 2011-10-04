@@ -35,8 +35,8 @@
 
         this.notesList = new Ext.List({
             store: this.notesStore,
-            grouped: true,
-            emptyText: '<div style="margin:5px;">No notes cached.</div>',
+            grouped: false,
+            emptyText: '<div style="margin:5px;">No Results found.</div>',
             onItemDisclosure: true,
             itemTpl: '<div class="list-item-title">{title}</div>' +
                 '<div class="list-item-narrative">{narrative}</div>'
