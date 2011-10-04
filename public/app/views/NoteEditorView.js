@@ -70,17 +70,37 @@
         {
             xtype: 'textfield',
             name: 'contactName',
-            label: 'Contact Name'
+            label: 'Contact Name',
+            labelAlign: 'top',
+            labelWidth: '100%',
+            listeners: {
+                afterrender: function(ele) {
+                    ele.fieldEl.dom.readOnly = true;
+                }
+            }
         },
         {
             xtype: 'textfield',
             name: 'emergencyContactName',
-            label: 'Emergency Contact Name'
+            label: 'Emergency Contact Name',
+            labelAlign: 'top',
+            labelWidth: '100%',            listeners: {
+            afterrender: function(ele) {
+                ele.fieldEl.dom.readOnly = true;
+            }
+        }
+
         },
         {
             xtype: 'textfield',
             name: 'contactWorkPhone',
-            label: 'Contact Work Phone'
+            label: 'Contact Work Phone',
+            labelAlign: 'top',
+            labelWidth: '100%',            listeners: {
+            afterrender: function(ele) {
+                ele.fieldEl.dom.readOnly = true;
+            }
+        }
         }
     ]
 });
