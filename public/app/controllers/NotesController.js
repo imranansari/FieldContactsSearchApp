@@ -43,6 +43,7 @@
     'editnote': function (options) {
 
         NotesApp.views.noteEditorView.load(options.note);
+        //NotesApp.views.noteEditorView.update(record.note.data);
         NotesApp.views.mainView.setActiveItem(
             NotesApp.views.noteEditorView,
             { type: 'slide', direction: 'left' }
