@@ -12,6 +12,19 @@
         );
     },
 
+    'backToSearch': function (options) {
+
+        if (!NotesApp.views.mainView) {
+            NotesApp.views.mainView = new NotesApp.views.MainView();
+        }
+
+        NotesApp.views.mainView.setActiveItem(
+            //NotesApp.views.notesListView
+            NotesApp.views.searchView,
+            { type: 'slide', direction: 'right' }
+        );
+    },
+
     'newnote': function (options) {
 
         var now = new Date();

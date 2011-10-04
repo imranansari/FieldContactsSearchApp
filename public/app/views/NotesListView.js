@@ -62,7 +62,7 @@
     onSearchView: function () {
         Ext.dispatch({
             controller: NotesApp.controllers.notesController,
-            action: 'index'
+            action: 'backToSearch'
         });
     },
 

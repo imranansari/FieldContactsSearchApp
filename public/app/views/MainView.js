@@ -1,7 +1,7 @@
 ﻿NotesApp.views.MainView = Ext.extend(Ext.Panel, {
     fullscreen: true,
     layout: 'card',
-    cardSwitchAnimation: 'slide',
+    //cardSwitchAnimation: 'slide',
     initComponent: function () {
 
         Ext.apply(NotesApp.views, {
