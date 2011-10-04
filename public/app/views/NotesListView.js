@@ -37,14 +37,14 @@
             store: this.notesStore,
             grouped: false,
             emptyText: '<div style="margin:5px;">No Results found.</div>',
-            onItemDisclosure: true,
-            itemTpl: '<div class="list-item-title">{title}</div>' +
-                '<div class="list-item-narrative">{narrative}</div>'
+            //onItemDisclosure: true,
+            itemTpl: '<div class="list-item-title">{contactName}</div>' +
+                '<div class="list-item-narrative">Emergency Contact: {emergencyContactName}</div>'
 
         });
 
-        this.notesList.on('disclose', function (record, index, evt) {
-            this.onEditNote(record, index);
+        this.notesList.on('selectionchange', function (selectionModel, records) {
+            this.onEditNote(records[0]);
         }, this),
 
             this.items = [this.notesList];
@@ -66,7 +66,7 @@
         });
     },
 
-    onEditNote: function (record, index) {
+    onEditNote: function (record) {
         Ext.dispatch({
             controller: NotesApp.controllers.notesController,
             action: 'editnote',

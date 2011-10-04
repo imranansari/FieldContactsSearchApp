@@ -19,10 +19,10 @@
         }
     },*/
     data: [
-        { id: 1, date: new Date(), title: 'Test Note1', narrative: 'This is simply a test note' },
-        { id: 2, date: new Date(), title: 'Test Note2', narrative: 'This is simply a test note' },
-        { id: 3, date: new Date(), title: 'Test Note3', narrative: 'This is simply a test note' },
-        { id: 4, date: new Date(), title: 'Test Note4', narrative: 'This is simply a test note' }
+        { id: 1, date: new Date(), contactName: 'Homer Simpson', emergencyContactName: 'Marge Simpson', contactWorkPhone:"336-286-9139" },
+        { id: 2, date: new Date(), contactName: 'Marge Simpson', emergencyContactName: 'Homer Simpson', contactWorkPhone:"336-286-9139" },
+        { id: 3, date: new Date(), contactName: 'Bart Simpson', emergencyContactName: 'Lisa Simpson', contactWorkPhone:"336-286-9139" },
+        { id: 4, date: new Date(), contactName: 'Lisa Simpson', emergencyContactName: 'Bart Simpson', contactWorkPhone:"336-286-9139" }
     ]
 });
 

@@ -27,8 +27,8 @@
             title: 'Contact Details',
             items: [
                 this.backButton/*,
-                { xtype: 'spacer' },
-                this.saveButton*/
+                 { xtype: 'spacer' },
+                 this.saveButton*/
             ]
         });
 
@@ -36,7 +36,7 @@
             dock: 'bottom',
             items: [
                 /*{ xtype: 'spacer' },
-                this.trashButton*/
+                 this.trashButton*/
             ]
         });
 
@@ -66,15 +66,23 @@
         });
     },
 
-    items: [{
-        xtype: 'textfield',
-        name: 'title',
-        label: 'Title'
-    }, {
-        xtype: 'textareafield',
-        name: 'narrative',
-        label: 'Narrative'
-    }]
+    items: [
+        {
+            xtype: 'textfield',
+            name: 'contactName',
+            label: 'Contact Name'
+        },
+        {
+            xtype: 'textfield',
+            name: 'emergencyContactName',
+            label: 'Emergency Contact Name'
+        },
+        {
+            xtype: 'textfield',
+            name: 'contactWorkPhone',
+            label: 'Contact Work Phone'
+        }
+    ]
 });
 
 
