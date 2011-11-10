@@ -26,3 +26,33 @@
     color:#ffffff;
 }
 
+.x-checkmark-base, .x-item-selected .x-list-selected:before, .x-item-selected .x-list-selected:after, .x-field .x-input-radio:after, .x-field .x-input-checkbox:after, .x-field .x-input-radio:checked:after, .x-field .x-input-checkbox:checked:after, .checkitem:after, .checkitem.done:after {
+    content: "";
+    position: absolute;
+    width: 0.75em;
+    height: 1.25em;
+    top: 50%;
+    left: auto;
+    -webkit-transform: rotate(45deg) skew(5deg);
+    -webkit-transform-origin: 50% 50%;
+    right: 1.1em;
+    border: .35em solid;
+    border-top: none;
+    border-left: none;
+    margin-top: -0.75em
+}
+
+
+.checkitem {
+    float: right;
+    width: 70px;
+    height: 28px
+}
+
+.checkitem:after {
+    border-color: #ddd
+}
+
+.checkitem.done:after {
+    border-color: #a4df1a
+}

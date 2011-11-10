@@ -1,4 +1,4 @@
-﻿NotesApp.views.NotesListView = Ext.extend(Ext.Panel, {
+NotesApp.views.MyContactsListView = Ext.extend(Ext.Panel, {
 
     notesStore: Ext.emptyFn,
     notesList: Ext.emptyFn,
@@ -84,21 +84,19 @@
     },
 
     onNewNote: function () {
-    /*    var list = this.notesList;
+        var list = this.notesList;
         list.itemTpl = '<div class="list-item-title">{contactName}</div>' +
             '<div class="list-item-narrative">Emergency Contact: {emergencyContactName}</div>' +
             '<div class="checkitem {[values.done ? "done" : ""]}">&nbsp;</div>';
         list.initComponent();
-        list.refresh();*/
-
-
+        list.refresh();
         //var list = Ext.getCmp('searchResultsList');
 
 
-        Ext.dispatch({
+        /*        Ext.dispatch({
          controller: NotesApp.controllers.notesController,
-         action: 'addContact'
-         });
+         action: 'newnote'
+         });*/
     },
 
     onSearchView: function () {

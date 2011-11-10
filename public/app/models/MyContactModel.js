@@ -1,4 +1,4 @@
-﻿Ext.regModel('NoteModel', {
+﻿Ext.regModel('MyContactModel', {
     idProperty: 'id',
     fields: [
         { name: 'id', type: 'int' },
@@ -19,10 +19,6 @@
 			defaultValue: false
 		}
 
-    ]/*,
-    validations: [
-        { type: 'presence', field: 'id' },
-        { type: 'presence', field: 'title', message: 'Please enter a title for this note.' }
-    ]*/
+    ]
 });
 

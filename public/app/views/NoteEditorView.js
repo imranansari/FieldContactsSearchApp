@@ -40,7 +40,7 @@
             ]
         });
 
-        this.dockedItems = [this.topToolbar, this.bottomToolbar];
+        //this.dockedItems = [this.topToolbar, this.bottomToolbar];
 
         NotesApp.views.NoteEditorView.superclass.initComponent.call(this);
     },

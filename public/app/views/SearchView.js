@@ -39,7 +39,7 @@
             ]
         });
 
-        this.dockedItems = [this.topToolbar, this.bottomToolbar];
+        //this.dockedItems = [this.topToolbar, this.bottomToolbar];
 
         fields = {
             xtype: 'fieldset',
@@ -111,7 +111,10 @@
                             value: 'Raleigh'
                         }
                     ]
-                }
+                },
+                {xtype:'button',
+                    text: 'Search',handler: this.doSearch}
+
             ]
         }
         this.items = fields;
