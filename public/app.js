@@ -100,8 +100,14 @@ function emailContact() {
     });
 }
 
-/*
-Android = {
+function reloadMyContactStore() {
+    Ext.dispatch({
+        controller: NotesApp.controllers.notesController,
+        action: 'reloadMyContactStore'
+    });
+}
+
+/*Android = {
     setCurrentView: function() {
 
     }

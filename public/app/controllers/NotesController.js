@@ -194,6 +194,10 @@
     'emailContact': function() {
         //NotesApp.views.notesListView.onNewNote();
         alert('email contact called');
+    },
+
+    'reloadMyContactStore': function() {
+        Ext.getStore('MyContactStore').load();
     }
 });
 
