@@ -8,7 +8,7 @@
         { name:'emergencyContactName', type:'string' },
         { name:'emergencyContactEmail', type:'string' },*/
 
-        { name:'address', type:'auto' },
+        { name:'address', type:'string' },
         { name:'subject', type:'string' },
         { name:'message', type:'string' }
     ]

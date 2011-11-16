@@ -233,7 +233,7 @@
     },
 
     'updateEmailForm': function(emailAddress){
-        alert(emailAddress);
+        alert('from updateEmailForm controller  :'+ emailAddress);
         var email = Ext.ModelMgr.create({ id:'1', address: emailAddress},
             'EmailModel'
         );
