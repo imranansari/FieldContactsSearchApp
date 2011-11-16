@@ -51,6 +51,10 @@ window.onpopstate = function(event) {
     var action = document.location.href.substr(document.location.href.lastIndexOf('/') + 1);
     Android.setCurrentView(action);
 
+    if (!NotesApp.views.mainView) {
+        NotesApp.views.mainView = new NotesApp.views.MainView();
+    }
+
     if (action == 'searchResults') {
         console.log('goto searchResults')
         NotesApp.views.mainView.setActiveItem(
@@ -125,7 +129,7 @@ function reloadMyContactStore() {
 
 function updateEmailForm(emailAddress) {
     var controller = NotesApp.controllers.notesController;
-        controller.updateEmailForm(emailAddress);
+    controller.updateEmailForm(emailAddress);
 }
 
 Android = {
