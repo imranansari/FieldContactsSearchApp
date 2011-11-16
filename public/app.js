@@ -18,6 +18,10 @@
 
         var action = document.location.href.substr(document.location.href.lastIndexOf('/') + 1);
 
+        if (!NotesApp.views.mainView) {
+            NotesApp.views.mainView = new NotesApp.views.MainView();
+        }
+
 
         if (action == 'mycontacts') {
             Ext.dispatch({
