@@ -124,8 +124,8 @@ function updateEmailForm(emailAddress) {
         controller.updateEmailForm(emailAddress);
 }
 
-/*Android = {
+Android = {
     setCurrentView:function() {
 
     }
-}*/
+}

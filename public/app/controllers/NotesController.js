@@ -192,7 +192,7 @@
     },
 
     'setSelectedContactEmail':function() {
-        alert('setSelectedContactEmail 2');
+        //alert('setSelectedContactEmail 2');
         var emailAddress = new Array();
         var store = Ext.getStore('NotesStore');
 
@@ -208,7 +208,7 @@
         store.clearFilter();
         store.resumeEvents();
 
-        alert('emailAddress :' +emailAddress.join(','));
+        //alert('emailAddress :' +emailAddress.join(','));
         Android.setEmailAddress(emailAddress.join(','));
     },
 
@@ -221,7 +221,7 @@
         }
 
         //var emailAddress = this.getSelectedContactEmail();
-        var email = Ext.ModelMgr.create({ id:'1'},
+        var email = Ext.ModelMgr.create({ id:'1', address:'homer@fox.com, lisa@fox.com'},
             'EmailModel'
         );
 
@@ -233,7 +233,7 @@
     },
 
     'updateEmailForm': function(emailAddress){
-        alert('from updateEmailForm controller  :'+ emailAddress);
+        //alert('from updateEmailForm controller  :'+ emailAddress);
         var email = Ext.ModelMgr.create({ id:'1', address: emailAddress},
             'EmailModel'
         );
