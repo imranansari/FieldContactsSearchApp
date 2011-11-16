@@ -197,7 +197,7 @@
 
         store.suspendEvents(false);
 
-        store.filter('done', 'false');
+        store.filter('done', 'true');
 
         store.data.each(function() {
             console.log(this);
@@ -207,9 +207,7 @@
         store.clearFilter();
         store.resumeEvents();
 
-        Android.setEmailAddress(emailAddress);
-
-        return emailAddress;
+        Android.setEmailAddress(emailAddress.join(','));
     },
 
     'emailContact':function() {
