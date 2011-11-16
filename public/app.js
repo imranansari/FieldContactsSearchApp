@@ -51,9 +51,6 @@ window.onpopstate = function(event) {
     var action = document.location.href.substr(document.location.href.lastIndexOf('/') + 1);
     Android.setCurrentView(action);
 
-    if (!NotesApp.views.mainView) {
-        NotesApp.views.mainView = new NotesApp.views.MainView();
-    }
 
     if (action == 'searchResults') {
         console.log('goto searchResults')
@@ -79,6 +76,10 @@ window.onpopstate = function(event) {
     }
 
     if (action == 'mycontacts') {
+        if (!NotesApp.views.mainView) {
+            NotesApp.views.mainView = new NotesApp.views.MainView();
+        }
+
         NotesApp.views.mainView.setActiveItem(
             NotesApp.views.myContactsListView,
             { type:'slide', direction:'right' }
