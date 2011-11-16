@@ -120,6 +120,7 @@ function reloadMyContactStore() {
 }
 
 function updateEmailForm(emailAddress) {
+    alert('from updateEmailForm :'+ emailAddress);
     var controller = NotesApp.controllers.notesController;
         controller.updateEmailForm(emailAddress);
 }
