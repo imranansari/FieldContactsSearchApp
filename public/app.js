@@ -118,8 +118,8 @@ function reloadMyContactStore() {
     });
 }
 
-Android = {
+/*Android = {
     setCurrentView:function() {
 
     }
-}
+}*/
