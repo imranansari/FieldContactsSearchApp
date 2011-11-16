@@ -18,11 +18,6 @@
 
         var action = document.location.href.substr(document.location.href.lastIndexOf('/') + 1);
 
-        if (!NotesApp.views.mainView) {
-            NotesApp.views.mainView = new NotesApp.views.MainView();
-        }
-
-
         if (action == 'mycontacts') {
             Ext.dispatch({
                 controller:NotesApp.controllers.notesController,
@@ -42,50 +37,45 @@
             });
         }
 
+        window.onpopstate = function(event) {
+            var action = document.location.href.substr(document.location.href.lastIndexOf('/') + 1);
+            Android.setCurrentView(action);
+
+
+            if (action == 'searchResults') {
+                console.log('goto searchResults')
+                NotesApp.views.mainView.setActiveItem(
+                    NotesApp.views.notesListView,
+                    { type:'slide', direction:'right' }
+                );
+            }
+            //if (document.location.href.substr(baseURL.length) == 'search') {
+            if (action == 'search') {
+                NotesApp.views.mainView.setActiveItem(
+                    //NotesApp.views.notesListView
+                    NotesApp.views.searchView,
+                    { type:'slide', direction:'right' }
+                );
+            }
+
+            if (action == 'viewDetails') {
+                NotesApp.views.mainView.setActiveItem(
+                    NotesApp.views.noteDetailView,
+                    { type:'slide', direction:'right' }
+                );
+            }
+
+            if (action == 'mycontacts') {
+
+                NotesApp.views.mainView.setActiveItem(
+                    NotesApp.views.myContactsListView,
+                    { type:'slide', direction:'right' }
+                );
+            }
+        };
     }
 });
 
-var baseURL = document.location.href;
-
-window.onpopstate = function(event) {
-    var action = document.location.href.substr(document.location.href.lastIndexOf('/') + 1);
-    Android.setCurrentView(action);
-
-
-    if (action == 'searchResults') {
-        console.log('goto searchResults')
-        NotesApp.views.mainView.setActiveItem(
-            NotesApp.views.notesListView,
-            { type:'slide', direction:'right' }
-        );
-    }
-    //if (document.location.href.substr(baseURL.length) == 'search') {
-    if (action == 'search') {
-        NotesApp.views.mainView.setActiveItem(
-            //NotesApp.views.notesListView
-            NotesApp.views.searchView,
-            { type:'slide', direction:'right' }
-        );
-    }
-
-    if (action == 'viewDetails') {
-        NotesApp.views.mainView.setActiveItem(
-            NotesApp.views.noteDetailView,
-            { type:'slide', direction:'right' }
-        );
-    }
-
-    if (action == 'mycontacts') {
-        if (!NotesApp.views.mainView) {
-            NotesApp.views.mainView = new NotesApp.views.MainView();
-        }
-
-        NotesApp.views.mainView.setActiveItem(
-            NotesApp.views.myContactsListView,
-            { type:'slide', direction:'right' }
-        );
-    }
-};
 
 /*
  window.onload = function() {
