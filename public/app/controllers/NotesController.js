@@ -220,8 +220,8 @@
             NotesApp.views.mainView = new NotesApp.views.MainView();
         }
 
-        var emailAddress = this.getSelectedContactEmail();
-        var email = Ext.ModelMgr.create({ id:'1', address: emailAddress},
+        //var emailAddress = this.getSelectedContactEmail();
+        var email = Ext.ModelMgr.create({ id:'1'},
             'EmailModel'
         );
 
@@ -229,6 +229,17 @@
         NotesApp.views.mainView.setActiveItem(
             NotesApp.views.emailContactView
         );
+        console.log(NotesApp.views.emailContactView);
+    },
+
+    'updateEmailForm': function(emailAddress){
+        alert(emailAddress);
+        var email = Ext.ModelMgr.create({ id:'1', address: emailAddress},
+            'EmailModel'
+        );
+
+        NotesApp.views.emailContactView.load(email);
+
     },
 
     'reloadMyContactStore':function() {

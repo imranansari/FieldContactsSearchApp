@@ -106,7 +106,7 @@ function emailContact() {
 }
 
 function setSelectedContactEmail() {
-    alert('setSelectedContactEmail 1');
+    //alert('setSelectedContactEmail 1');
     var controller = NotesApp.controllers.notesController;
     controller.setSelectedContactEmail();
 
@@ -117,6 +117,11 @@ function reloadMyContactStore() {
         controller:NotesApp.controllers.notesController,
         action:'reloadMyContactStore'
     });
+}
+
+function updateEmailForm(emailAddress) {
+    var controller = NotesApp.controllers.notesController;
+        controller.updateEmailForm(emailAddress);
 }
 
 /*Android = {
