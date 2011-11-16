@@ -69,7 +69,7 @@
     items: [
         {
             xtype: 'textfield',
-            name: 'contactName',
+            name: 'address',
             label: 'Mail To:',
             labelAlign: 'top',
             labelWidth: '100%',

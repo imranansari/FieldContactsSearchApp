@@ -191,6 +191,27 @@
         store.resumeEvents();
     },
 
+    'setSelectedContactEmail':function() {
+        var emailAddress = new Array();
+        var store = Ext.getStore('NotesStore');
+
+        store.suspendEvents(false);
+
+        store.filter('done', 'false');
+
+        store.data.each(function() {
+            console.log(this);
+            emailAddress.push(this.data.contactWorkEmail);
+        });
+
+        store.clearFilter();
+        store.resumeEvents();
+
+        Android.setEmailAddress(emailAddress);
+
+        return emailAddress;
+    },
+
     'emailContact':function() {
         window.history.pushState('data', 'emailContact', 'emailContact');
         Android.setCurrentView('emailContact');
@@ -199,14 +220,15 @@
             NotesApp.views.mainView = new NotesApp.views.MainView();
         }
 
-        var note = Ext.ModelMgr.create({ id:'1', contactName:'imran'},
-            'NoteModel'
+        var emailAddress = this.getSelectedContactEmail();
+        var email = Ext.ModelMgr.create({ id:'1', address: emailAddress},
+            'EmailModel'
         );
 
-        NotesApp.views.emailContactView.load(note);
-          NotesApp.views.mainView.setActiveItem(
-              NotesApp.views.emailContactView
-          );
+        NotesApp.views.emailContactView.load(email);
+        NotesApp.views.mainView.setActiveItem(
+            NotesApp.views.emailContactView
+        );
     },
 
     'reloadMyContactStore':function() {

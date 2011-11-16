@@ -1,8 +1,8 @@
 ﻿var App = new Ext.Application({
-    name: 'NotesApp',
-    useLoadMask: true,
+    name:'NotesApp',
+    useLoadMask:true,
 
-    launch: function () {
+    launch:function() {
         /*        var now = new Date();
          var noteId = now.getTime();
 
@@ -21,20 +21,20 @@
 
         if (action == 'mycontacts') {
             Ext.dispatch({
-                controller: NotesApp.controllers.notesController,
-                action: 'myContactsListView'
+                controller:NotesApp.controllers.notesController,
+                action:'myContactsListView'
             });
 
-        } else if (action == 'emailContact'){
+        } else if (action == 'emailContact') {
             Ext.dispatch({
-                controller: NotesApp.controllers.notesController,
-                action: 'emailContact'
+                controller:NotesApp.controllers.notesController,
+                action:'emailContact'
             });
         } else {
 
             Ext.dispatch({
-                controller: NotesApp.controllers.notesController,
-                action: 'index'
+                controller:NotesApp.controllers.notesController,
+                action:'index'
             });
         }
 
@@ -51,7 +51,7 @@ window.onpopstate = function(event) {
         console.log('goto searchResults')
         NotesApp.views.mainView.setActiveItem(
             NotesApp.views.notesListView,
-            { type: 'slide', direction: 'right' }
+            { type:'slide', direction:'right' }
         );
     }
     //if (document.location.href.substr(baseURL.length) == 'search') {
@@ -59,21 +59,21 @@ window.onpopstate = function(event) {
         NotesApp.views.mainView.setActiveItem(
             //NotesApp.views.notesListView
             NotesApp.views.searchView,
-            { type: 'slide', direction: 'right' }
+            { type:'slide', direction:'right' }
         );
     }
 
     if (action == 'viewDetails') {
         NotesApp.views.mainView.setActiveItem(
             NotesApp.views.noteDetailView,
-            { type: 'slide', direction: 'right' }
+            { type:'slide', direction:'right' }
         );
     }
 
     if (action == 'mycontacts') {
         NotesApp.views.mainView.setActiveItem(
             NotesApp.views.myContactsListView,
-            { type: 'slide', direction: 'right' }
+            { type:'slide', direction:'right' }
         );
     }
 };
@@ -93,27 +93,33 @@ window.onpopstate = function(event) {
 
 function addContact() {
     Ext.dispatch({
-        controller: NotesApp.controllers.notesController,
-        action: 'addContact'
+        controller:NotesApp.controllers.notesController,
+        action:'addContact'
     });
 }
 
 function emailContact() {
     Ext.dispatch({
-        controller: NotesApp.controllers.notesController,
-        action: 'emailContact'
+        controller:NotesApp.controllers.notesController,
+        action:'emailContact'
     });
+}
+
+function setSelectedContactEmail() {
+    var controller = NotesApp.controllers.notesController;
+    controller.setSelectedContactEmail();
+
 }
 
 function reloadMyContactStore() {
     Ext.dispatch({
-        controller: NotesApp.controllers.notesController,
-        action: 'reloadMyContactStore'
+        controller:NotesApp.controllers.notesController,
+        action:'reloadMyContactStore'
     });
 }
 
-/*Android = {
-    setCurrentView: function() {
+Android = {
+    setCurrentView:function() {
 
     }
-}*/
+}
