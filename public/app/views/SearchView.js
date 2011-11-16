@@ -24,7 +24,7 @@
         });
 
         this.topToolbar = new Ext.Toolbar({
-            title: 'Field Contacts',
+            title: 'Field Contacts'
             /*items: [
              { xtype: 'spacer' },
              this.addButton
@@ -44,7 +44,6 @@
         fields = {
             xtype: 'fieldset',
             id: 'userFormFieldset',
-            title: 'Search Contacts',
             instructions: "Please enter search criteria",
             defaults: {
                 xtype: 'textfield',

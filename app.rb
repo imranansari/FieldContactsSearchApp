@@ -14,3 +14,8 @@ end
 get '/mycontacts' do
   File.read(File.join('public', 'index.html'))
 end
+
+
+get '/emailContact' do
+  File.read(File.join('public', 'index.html'))
+end

@@ -25,6 +25,11 @@
                 action: 'myContactsListView'
             });
 
+        } else if (action == 'emailContact'){
+            Ext.dispatch({
+                controller: NotesApp.controllers.notesController,
+                action: 'emailContact'
+            });
         } else {
 
             Ext.dispatch({

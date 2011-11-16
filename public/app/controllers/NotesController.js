@@ -1,6 +1,6 @@
 ﻿Ext.regController('NotesController', {
 
-    'index': function (options) {
+    'index':function(options) {
 
         if (!NotesApp.views.mainView) {
             NotesApp.views.mainView = new NotesApp.views.MainView();
@@ -15,7 +15,7 @@
         );
     },
 
-    'myContactsListView': function (options) {
+    'myContactsListView':function(options) {
 
         if (!NotesApp.views.mainView) {
             NotesApp.views.mainView = new NotesApp.views.MainView();
@@ -37,7 +37,7 @@
     },
 
 
-    'backToSearch': function (options) {
+    'backToSearch':function(options) {
 
         if (!NotesApp.views.mainView) {
             NotesApp.views.mainView = new NotesApp.views.MainView();
@@ -46,26 +46,26 @@
         NotesApp.views.mainView.setActiveItem(
             //NotesApp.views.notesListView
             NotesApp.views.searchView,
-            { type: 'slide', direction: 'right' }
+            { type:'slide', direction:'right' }
         );
     },
 
-    'newnote': function (options) {
+    'newnote':function(options) {
 
         var now = new Date();
         var noteId = now.getTime();
-        var note = Ext.ModelMgr.create({ id: noteId, date: now, title: '', narrative: '' },
+        var note = Ext.ModelMgr.create({ id:noteId, date:now, title:'', narrative:'' },
             'NoteModel'
         );
 
         NotesApp.views.noteEditorView.load(note);
         NotesApp.views.mainView.setActiveItem(
             NotesApp.views.noteEditorView,
-            { type: 'slide', direction: 'left' }
+            { type:'slide', direction:'left' }
         );
     },
 
-    'editnote': function (options) {
+    'editnote':function(options) {
 
         window.history.pushState('data', 'viewDetails', 'viewDetails');
         Android.setCurrentView('viewDetails');
@@ -78,11 +78,11 @@
         //NotesApp.views.noteEditorView.update(record.note.data);
         NotesApp.views.mainView.setActiveItem(
             NotesApp.views.noteDetailView,
-            { type: 'slide', direction: 'left' }
+            { type:'slide', direction:'left' }
         );
     },
 
-    'setSelectForEmail': function(options) {
+    'setSelectForEmail':function(options) {
         var store = Ext.getStore('NotesStore');
         var model = store.getAt(options.index);
 
@@ -96,7 +96,7 @@
 
     },
 
-    'savenote': function (options) {
+    'savenote':function(options) {
 
         var currentNote = NotesApp.views.noteEditorView.getRecord();
 
@@ -115,18 +115,18 @@
         NotesApp.stores.notesStore.sync();
 
         NotesApp.stores.notesStore.sort([
-            { property: 'date', direction: 'DESC'}
+            { property:'date', direction:'DESC'}
         ]);
 
         NotesApp.views.notesListView.refreshList();
 
         NotesApp.views.mainView.setActiveItem(
             NotesApp.views.notesListView,
-            { type: 'slide', direction: 'right' }
+            { type:'slide', direction:'right' }
         );
     },
 
-    'deletenote': function (options) {
+    'deletenote':function(options) {
 
         var currentNote = NotesApp.views.noteEditorView.getRecord();
 
@@ -139,19 +139,19 @@
 
         NotesApp.views.mainView.setActiveItem(
             NotesApp.views.notesListView,
-            { type: 'slide', direction: 'right' }
+            { type:'slide', direction:'right' }
         );
     },
 
-    'canceledit': function (options) {
+    'canceledit':function(options) {
 
         NotesApp.views.mainView.setActiveItem(
             NotesApp.views.notesListView,
-            { type: 'slide', direction: 'right' }
+            { type:'slide', direction:'right' }
         );
     },
 
-    'search': function (options) {
+    'search':function(options) {
 
         // alert('a');
         NotesApp.stores.notesStore.load();
@@ -161,11 +161,11 @@
 
         NotesApp.views.mainView.setActiveItem(
             NotesApp.views.notesListView,
-            { type: 'slide', direction: 'left' }
+            { type:'slide', direction:'left' }
         );
     },
 
-    'addContact': function() {
+    'addContact':function() {
         //NotesApp.views.notesListView.onNewNote();
         //alert('add contact called');
         var store = Ext.getStore('NotesStore');
@@ -191,12 +191,25 @@
         store.resumeEvents();
     },
 
-    'emailContact': function() {
-        //NotesApp.views.notesListView.onNewNote();
-        alert('email contact called');
+    'emailContact':function() {
+        window.history.pushState('data', 'emailContact', 'emailContact');
+        Android.setCurrentView('emailContact');
+
+        if (!NotesApp.views.mainView) {
+            NotesApp.views.mainView = new NotesApp.views.MainView();
+        }
+
+        var note = Ext.ModelMgr.create({ id:'1', contactName:'imran'},
+            'NoteModel'
+        );
+
+        NotesApp.views.emailContactView.load(note);
+          NotesApp.views.mainView.setActiveItem(
+              NotesApp.views.emailContactView
+          );
     },
 
-    'reloadMyContactStore': function() {
+    'reloadMyContactStore':function() {
         Ext.getStore('MyContactStore').load();
     }
 });
