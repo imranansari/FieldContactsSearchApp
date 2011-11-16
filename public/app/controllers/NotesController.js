@@ -192,6 +192,7 @@
     },
 
     'setSelectedContactEmail':function() {
+        alert('setSelectedContactEmail 2');
         var emailAddress = new Array();
         var store = Ext.getStore('NotesStore');
 
@@ -207,6 +208,7 @@
         store.clearFilter();
         store.resumeEvents();
 
+        alert('emailAddress :' +emailAddress.join(','));
         Android.setEmailAddress(emailAddress.join(','));
     },
 

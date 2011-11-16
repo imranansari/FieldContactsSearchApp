@@ -106,6 +106,7 @@ function emailContact() {
 }
 
 function setSelectedContactEmail() {
+    alert('setSelectedContactEmail 1');
     var controller = NotesApp.controllers.notesController;
     controller.setSelectedContactEmail();
 
